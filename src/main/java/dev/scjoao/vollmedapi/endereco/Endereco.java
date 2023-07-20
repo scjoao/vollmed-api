@@ -10,6 +10,17 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Endereco {
+
+    public Endereco(DadosEndereco dadosEndereco) {
+        this.cep = dadosEndereco.cep();
+        this.logradouro = dadosEndereco.logradouro();
+        this.numero = dadosEndereco.numero();
+        this.complemento = dadosEndereco.complemento();
+        this.bairro = dadosEndereco.bairro();
+        this.cidade = dadosEndereco.cidade();
+        this.uf = dadosEndereco.uf();
+    }
+
     private String cep;
     private String logradouro;
     private String numero;
