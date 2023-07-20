@@ -30,7 +30,7 @@ public class Medico {
     private String crm;
     private String email;
 
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Especialidade especialidade;
 
     @Embedded

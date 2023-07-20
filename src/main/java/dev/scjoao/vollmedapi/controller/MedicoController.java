@@ -4,6 +4,7 @@ import dev.scjoao.vollmedapi.medico.DadosCadastroMedico;
 import dev.scjoao.vollmedapi.medico.Medico;
 import dev.scjoao.vollmedapi.medico.MedicoRepository;
 import jakarta.transaction.Transactional;
+import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -16,7 +17,7 @@ public class MedicoController {
 
     @PostMapping
     @Transactional
-    public void cadastrar(@RequestBody DadosCadastroMedico dadosCadastroMedico){
+    public void cadastrar(@RequestBody @Valid DadosCadastroMedico dadosCadastroMedico){
         repository.save(new Medico(dadosCadastroMedico));
     }
 }
