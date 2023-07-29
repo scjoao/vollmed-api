@@ -37,4 +37,16 @@ public class Medico {
 
     @Embedded
     private Endereco endereco;
+
+    public void atualizarInformacoes(DadosAtualizacaoMedico dadosAtualizacaoMedico) {
+        if (dadosAtualizacaoMedico.nome() != null){
+            this.nome = dadosAtualizacaoMedico.nome();
+        }
+        if (dadosAtualizacaoMedico.telefone() != null){
+            this.telefone = dadosAtualizacaoMedico.telefone();
+        }
+        if (dadosAtualizacaoMedico.endereco() != null){
+            this.endereco.atuaizarInformcoes(dadosAtualizacaoMedico.endereco());
+        }
+    }
 }
